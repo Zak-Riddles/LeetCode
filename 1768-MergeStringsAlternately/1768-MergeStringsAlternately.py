@@ -1,18 +1,14 @@
-# Last updated: 4/10/2025, 1:06:24 AM
+# Last updated: 4/10/2025, 1:16:15 AM
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         merged = []
-
-        for i, char in enumerate(word1):
-            merged.append(char)
-            if (i < len(word2)):
+        i = 0
+        while i < (len(word1) + len(word2)):
+            if i < len(word1):
+                merged.append(word1[i])
+            if i < len(word2):
                 merged.append(word2[i])
-
-        if len(word2) > len(word1):
-            i = len(word1)
-            while i < len(word2):
-                merged.append(word2[i])
-                i += 1
+            i += 1
         
         return "".join(merged)
             
